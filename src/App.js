@@ -12,6 +12,8 @@ function App() {
   function handleSubmit() {
     if(messages.length < 2 & bufferText.length > 0) {
       setMessages([...messages, bufferText])
+      let textarea = document.getElementById('text-input')
+      textarea.value = ''
     }
   }
 
@@ -24,6 +26,7 @@ function App() {
             })}
           </MessageContainer>
           <TextArea 
+            id='text-input'
             placeholder='start typing a message less than 280 characters...' 
             onChange={(e) => setBufferText(e.target.value)}
             maxLength={maxLen}
