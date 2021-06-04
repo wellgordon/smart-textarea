@@ -10,7 +10,7 @@ function App() {
   const [messages, setMessages] = React.useState([])
 
   function handleSubmit() {
-    if(messages.length < 2 & bufferText.length > 0) {
+    if(messages.length < 2 & bufferText.trim().length > 0) {
       setMessages([...messages, bufferText])
       let textarea = document.getElementById('text-input')
       textarea.value = ''
